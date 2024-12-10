@@ -1,13 +1,12 @@
 package Local;
+import Multijoueur.*;
+import Utils.*;
 import java.io.Serializable;
 import java.net.Socket;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
-
-import Utils.*;
 import java.util.Scanner;
-import Multijoueur.*;
 
 public class Joueur implements Serializable{
     private String nom;
@@ -94,7 +93,7 @@ public class Joueur implements Serializable{
                 int tempsCasse = bloc.getTempsCasse();
                 for (int i = 0; i < tempsCasse; i += 1000) {
                     System.out.println("Cassage du bloc... (" + (tempsCasse - i) / 1000 + " secondes restantes)");
-                    TempsAttente.attendre(100); // RECHANGER A 500
+                    TempsAttente.attendre(400); // RECHANGER A 500
                 }
                 ajouterItemInventaire(bloc.recuperer());
                 TempsAttente.attendre(700);
